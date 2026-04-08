@@ -43,13 +43,13 @@ def build_job(workspace: Path, existing: dict[str, Any] | None = None) -> dict[s
     return {
         "id": JOB_ID,
         "name": JOB_NAME,
-        "description": "Capture LingXing WMS 待处理 footer total every day at 17:00 Asia/Shanghai.",
+        "description": "Capture LingXing WMS 待处理 footer total every day at 17:30 Asia/Shanghai.",
         "enabled": True,
         "createdAtMs": created_at,
         "updatedAtMs": now,
         "schedule": {
             "kind": "cron",
-            "expr": "0 17 * * *",
+            "expr": "30 17 * * *",
             "tz": "Asia/Shanghai",
             "staggerMs": 0,
         },

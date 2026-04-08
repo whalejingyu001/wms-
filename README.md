@@ -10,7 +10,7 @@
 
 - `run_pending_count.py`：抓取并发送企微
 - `run_chat_fetch.py`：在当前会话里手动触发抓取
-- `install_cron_job.py`：向 OpenClaw cron store 写入每日 17:00 定时任务
+- `install_cron_job.py`：向 OpenClaw cron store 写入每日 17:30 定时任务
 - `scripts/lingxing_wms_scraper.py`：通用 Playwright 页面抓取器
 - `references/parcel-pending-total.job.json`：当前领星 WMS 页面抓取配置
 
