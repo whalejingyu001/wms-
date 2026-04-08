@@ -1,0 +1,62 @@
+{
+  "page_url": "https://wms.xlwms.com/outbound/parcel",
+  "state_file": "tmp/lingxing-state.json",
+  "ready_selector": ".el-pagination__total",
+  "actions": [
+    {
+      "type": "click",
+      "selector": "div[role=\"tab\"]:has-text(\"待处理\")"
+    },
+    {
+      "type": "wait_for_selector",
+      "selector": ".el-tabs__item.is-active"
+    },
+    {
+      "type": "wait_for_selector",
+      "selector": ".el-pagination__total"
+    },
+    {
+      "type": "wait_for_timeout",
+      "ms": 12000
+    }
+  ],
+  "fields": [
+    {
+      "name": "captured_at",
+      "type": "timestamp"
+    },
+    {
+      "name": "page",
+      "type": "constant",
+      "value": "outbound/parcel"
+    },
+    {
+      "name": "status_tab_text",
+      "type": "text",
+      "scope": "page",
+      "selector": ".el-tabs__item.is-active"
+    },
+    {
+      "name": "status_tab_count",
+      "type": "text",
+      "scope": "page",
+      "selector": ".el-tabs__item.is-active",
+      "regex": "\\((\\d+)\\)",
+      "as_int": true
+    },
+    {
+      "name": "footer_total_text",
+      "type": "text",
+      "scope": "page",
+      "selector": ".el-pagination__total"
+    },
+    {
+      "name": "footer_total_count",
+      "type": "text",
+      "scope": "page",
+      "selector": ".el-pagination__total",
+      "regex": "共\\s*(\\d+)\\s*条",
+      "as_int": true
+    }
+  ]
+}
